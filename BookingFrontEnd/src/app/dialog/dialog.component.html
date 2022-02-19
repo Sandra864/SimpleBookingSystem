@@ -1,0 +1,28 @@
+<h1 mat-dialog-title >Book Resource Details</h1>
+<div mat-dialog-content>
+<form [formGroup]="bookingCommand">
+  <mat-form-field appearance="outline">  
+    <mat-label>Date From</mat-label>
+    <input formControlName="dateFrom" matInput [matDatepicker]="dateFrom">
+    <mat-datepicker-toggle matSuffix [for]="dateFrom"></mat-datepicker-toggle>
+    <mat-datepicker #dateFrom></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline">  
+      <mat-label>Date To</mat-label>
+      <input formControlName="dateTo" matInput [matDatepicker]="dateTo">
+      <mat-datepicker-toggle matSuffix [for]="dateTo"></mat-datepicker-toggle>
+      <mat-datepicker #dateTo></mat-datepicker>
+    </mat-form-field>
+  
+  <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Quantity</mat-label>
+      <input formControlName="BookedQuantity" matInput type="number">
+    </mat-form-field>
+  
+
+</form>
+</div>
+<div mat-dialog-action align="end">
+<button style="margin: left 8px;" mat-raised-button color="primary" (click)="bookResource(bookingCommand)">Book</button>
+</div>
